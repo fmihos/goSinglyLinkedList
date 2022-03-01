@@ -1,0 +1,7 @@
+# editors / IDEs
+.vscode
+.idea
+
+# os-specific files
+.DS_Store
+
