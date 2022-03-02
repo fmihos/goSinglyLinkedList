@@ -1,6 +1,8 @@
 package singlylinkedlist
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Node struct {
 	key  interface{}
@@ -10,11 +12,6 @@ type Node struct {
 type List struct {
 	head *Node
 	len  int
-}
-
-//InitList returns an empty list
-func InitList() *List {
-	return &List{}
 }
 
 //InsertFront inserts an element at the head of the list
@@ -149,6 +146,26 @@ func (l *List) RemoveAt(pos int) error {
 	return nil
 }
 
+//Size returns the size of the list
+func (l *List) Size() int {
+	return l.len
+}
+
+//GetAt returns Node at specific position of the list (Zero based indexing)
+func (l *List) GetAt(pos int) *Node {
+	current := l.head
+
+	if pos < 0 || pos > (l.len-1) {
+		return nil
+	} else {
+		for i := 0; i < pos; i++ {
+			current = current.next
+		}
+	}
+	return current
+}
+
+//Display displays list elements
 func (l *List) Display() {
 	current := l.head
 

@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	list := singlylinkedlist.InitList()
+	list := singlylinkedlist.List{}
 
 	// insert values at front
 	list.InsertFront(5)
